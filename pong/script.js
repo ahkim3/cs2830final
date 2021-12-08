@@ -17,7 +17,7 @@ let lives,
   gameIsOver;
 
 function setup() {
-  createCanvas(windowWidth - 20, windowHeight - 20);
+  createCanvas(windowWidth - 20, windowHeight - 100);
   colorMode(HSB, 360, 100, 100);
   score = 0;
   paddleOne = new Paddle("red");
@@ -29,6 +29,7 @@ function setup() {
   brickW = 50;
   brickH = 40;
   bricks = [];
+  start = false;
 
   for (let j = 1; j < 7; j++) {
     for (let i = 0; i < 10; i++) {
@@ -37,19 +38,35 @@ function setup() {
   }
 }
 
+
 function draw() {
   background(220, 0, 80);
   paddleOne.draw();
-  paddleOne.move(1);
   paddleTwo.draw();
-  paddleTwo.move(2);
-  ballOne.draw();
-  ballOne.move(paddleOne);
-  ballTwo.draw();
-  ballTwo.move(paddleTwo);
-  text(`Lives: ${lives}`);
-  text(`Score: ${score}`);
-  gameOver();
+    
+  if (keyIsPressed === true)
+  {
+    start = true;
+  }
+  
+  if (start)
+  {
+    paddleOne.move(1);
+    paddleTwo.move(2);
+    ballOne.draw();
+    ballOne.move(paddleOne);
+    ballTwo.draw();
+    ballTwo.move(paddleTwo);
+    
+    text(`Score: ${score}`, 10, 25);
+    if (lives > 0)
+      text(`Lives: ${lives}`, 10, 10);
+    else
+      text("Lives: 0", 10, 10);
+    
+    gameOver();
+  }
+
   drawBricks();
 }
 
@@ -162,7 +179,7 @@ class Ball {
   }
 }
 
-//class for bricks
+// class for bricks
 class Brick {
   constructor(xPosition, yPosition) {
     this.xPosition = xPosition;
@@ -236,4 +253,8 @@ function gameOver() {
   if (ballOne.yPosition > height && ballTwo.yPosition > height) {
     text("GAME OVER", width / 2, height / 2);
   }
+}
+
+function reload() {
+  location.reload();
 }
