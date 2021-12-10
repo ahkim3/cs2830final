@@ -1,3 +1,7 @@
+/*
+  References:
+    1) https://www.w3schools.com/jsref/met_loc_reload.asp
+*/
 // Name any p5.js functions we use in `global` so Glitch can recognize them.
 /* global
  *    HSB, background, colorMode, createCanvas, ellipse, fill, height,
@@ -18,7 +22,7 @@ let lives,
 
 function setup() {
   createCanvas(windowWidth - 20, windowHeight - 100);
-  colorMode(HSB, 360, 100, 100);
+  colorMode(RGB, 255);
   score = 0;
   paddleOne = new Paddle("red");
   paddleTwo = new Paddle("blue");
@@ -40,7 +44,7 @@ function setup() {
 
 
 function draw() {
-  background(220, 0, 80);
+  background(0, 0, 0);
   paddleOne.draw();
   paddleTwo.draw();
     
@@ -59,11 +63,7 @@ function draw() {
     ballTwo.move(paddleTwo);
     
     text(`Score: ${score}`, 10, 25);
-    if (lives > 0)
-      text(`Lives: ${lives}`, 10, 10);
-    else
-      text("Lives: 0", 10, 10);
-    
+
     gameOver();
   }
 
@@ -125,8 +125,6 @@ class Ball {
   }
 
   move(paddle) {
-    console.log(this.xPosition);
-    console.log(this.xVelocity);
     // Bounce ball off walls
     if (this.xPosition >= width - this.diameter) {
       this.xVelocity *= -1;
@@ -192,28 +190,11 @@ class Brick {
     stroke(10);
     rect(this.xPosition, this.yPosition, this.width, this.height);
   }
-  getHit(ball) {
-    if (
-      collideRectCircle(
-        this.xPosition,
-        this.yPosition,
-        this.width,
-        this.height,
-        ball.xPosition,
-        ball.yPosition,
-        ball.diameter
-      )
-    ) {
-      this.xPosition = width + 2000;
-      this.yPosition = height + 2000;
-      score++;
-    }
-  }
 }
 
 function drawBricks() {
   for (let i = 0; i < bricks.length; i++) {
-    if (
+    if ( // First ball hits brick
       collideRectCircle(
         bricks[i].xPosition,
         bricks[i].yPosition,
@@ -226,7 +207,8 @@ function drawBricks() {
     ) {
       bricks.splice(i, 1);
       ballOne.yVelocity *= -1;
-    } else if (
+      score++;
+    } else if ( // Second ball hits brick
       collideRectCircle(
         bricks[i].xPosition,
         bricks[i].yPosition,
@@ -239,8 +221,9 @@ function drawBricks() {
     ) {
       bricks.splice(i, 1);
       ballTwo.yVelocity *= -1;
-    } else {
-      fill(20);
+      score++;
+    } else { // Draw remaining bricks
+      fill(75, 90, 99);
       bricks[i].draw();
     }
   }
@@ -255,6 +238,8 @@ function gameOver() {
   }
 }
 
+// The following code is based on https://www.w3schools.com/jsref/met_loc_reload.asp
 function reload() {
   location.reload();
 }
+// End of code from https://www.w3schools.com/jsref/met_loc_reload.asp
