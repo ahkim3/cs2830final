@@ -1,0 +1,13 @@
+body {
+    background-color: black;
+    font-family: helvetica, arial, sans-serif;
+    color: white;
+}
+
+#header {
+    white-space: nowrap;
+}
+
+.header-elements {
+    display: inline-block;
+}

@@ -62,6 +62,7 @@ function draw() {
     ballTwo.draw();
     ballTwo.move(paddleTwo);
     
+    color("white");
     text(`Score: ${score}`, 10, 25);
 
     gameOver();
