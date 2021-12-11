@@ -10,17 +10,18 @@
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="style.css" />
-        <title></title>
+        <script src="script.js"></script>
+        <title>AHKYQX-FinalProject-F21</title>
     </head>
     <body>
         <a href="breakout/index.html">Breakout</a>
         <a href="snake/index.html">Snake</a>
 
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username" />
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password" />
-        <input type="hidden" name="actionType" value="password" />
-        <input type="submit" />
+        <select onchange="changeInput()" id="functions" name="functions">
+            <option value="select-type" selected disabled>Logged Out</option>
+            <option value="password">Login</option>
+        </select>
+
+        <form id="mainForm" action="action.php" method="POST"></form>
     </body>
 </html>
