@@ -1,0 +1,29 @@
+video {
+    width: 300px;
+}
+
+.images {
+    width: 65%;
+    top: 600px;
+}
+
+img {
+    width: 80%;
+    height: auto;
+}
+
+.title {
+    font-weight: bold;
+}
+
+.top-buffer {
+    margin-top: 20px;
+}
+
+.top-buffer-more {
+    margin-top: 50px;
+}
+
+.game-title {
+    text-align: center;
+}

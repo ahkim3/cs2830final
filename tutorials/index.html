@@ -1,3 +1,9 @@
+<!--
+    References:
+        1) https://www.w3schools.com/html/html5_video.asp
+        2) https://getbootstrap.com/docs/4.1/components/carousel/
+ -->
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -10,35 +16,117 @@
         />
         <link rel="stylesheet" href="../style.css" />
         <link rel="stylesheet" href="style.css" />
+
+        <script
+            type="text/javascript"
+            src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        ></script>
         <script src="script.js"></script>
         <title>Tutorial</title>
     </head>
     <body>
         <a href="../index.html" class="btn btn-secondary" id="back">Back</a>
-        <div>
-            <h1 id="title" class="center">Tutorial</h1>
-        </div>
-        <div
-            class="btn-group p-2 center"
-            id="buttons"
-            role="group"
-            aria-label="Buttons"
-        >
-            <a href="snake/index.html" class="btn btn-success btn-secondary"
-                >Snake</a
-            >
-            <a href="tutorials/index.html" class="btn btn-primary btn-secondary"
-                >Tutorials</a
-            >
+
+        <div class="center">
+            <h1 id="title">Tutorials</h1>
         </div>
 
-        <!-- Implement dropdown? -->
-        <!-- <select onchange="changeInput()" id="tutorial" name="tutorial">
-            <option value="select-mode" selected disabled>
-                Select Game
-            </option>
-            <option value="snake">Snake</option>
-            <option value="breakout">Breakout (Premium)</option>
-        </select> -->
+        <div class="center"></div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <video autoplay loop muted>
+                        <source
+                            src="../img/SnakeVideoTutorial.mp4"
+                            type="video/mp4"
+                        />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="col">
+                    <video autoplay loop muted>
+                        <source
+                            src="../img/BreakoutVideoTutorial.mp4"
+                            type="video/mp4"
+                        />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <div class="row game-title top-buffer-more">
+                <div class="col title"><h2>Breakout</h2></div>
+            </div>
+
+            <div class="row top-buffer-more">
+                <div class="col title"><h3>Screenshot</h3></div>
+                <div class="col title"><h3>Description</h3></div>
+            </div>
+
+            <div class="row top-buffer">
+                <div class="col">
+                    <img src="../img/Screenshot 1.png" alt="Step 1" />
+                </div>
+                <div class="col">
+                    <p>Click "Logged Out" to log in.</p>
+                </div>
+            </div>
+
+            <div class="row top-buffer">
+                <div class="col">
+                    <img src="../img/Screenshot 2.png" alt="Step 2" />
+                </div>
+                <div class="col"><p>Login with username and password.</p></div>
+            </div>
+
+            <div class="row top-buffer">
+                <div class="col">
+                    <img src="../img/Screenshot 3.png" alt="Step 3" />
+                </div>
+                <div class="col">
+                    <p>
+                        Red player controls their paddle with A/D keys. Blue
+                        player controls their paddle with Left/Right keys. Use
+                        paddles to deflect ball and destroy all bricks on
+                        screen.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row game-title top-buffer-more">
+                <div class="col title"><h2>Snake</h2></div>
+            </div>
+
+            <div class="row top-buffer-more">
+                <div class="col title"><h3>Screenshot</h3></div>
+                <div class="col title"><h3>Description</h3></div>
+            </div>
+
+            <div class="row top-buffer">
+                <div class="col">
+                    <img src="../img/Screenshot 1.png" alt="Step 1" />
+                </div>
+                <div class="col"><p>Click Snake.</p></div>
+            </div>
+
+            <div class="row top-buffer">
+                <div class="col">
+                    <img src="../img/Screenshot 4.png" alt="Step 2" />
+                </div>
+                <div class="col">
+                    <p>
+                        Use arrow keys to control snake. Collect orange apples
+                        to grow length. Avoid red apples.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <p id="contentBox"></p>
+
+        <button type="button" class="btn btn-success" onclick="getContent()">
+            Curious who authored this?
+        </button>
     </body>
 </html>

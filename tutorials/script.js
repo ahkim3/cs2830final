@@ -1,19 +1,25 @@
-function changeInput() {
-    var form = document.getElementById("mainForm");
-    form.innerHTML = "";
+/*
+    References:
+        1) Prof. Wergeles' In-Class Notes
+*/
+
+function getContent() {
+            
+    var xmlHttp = new XMLHttpRequest();
     
-    var newFunction = document.getElementById("tutorial").value;
-
-    if (newFunction == "snake") {
-        var newText = 
-            "<h1>Hello world</h1>";
-
-        form.innerHTML = newText;
-        form.setAttribute("method", "GET");
-    }
-
-    else if (newFunction == "breakout")
-    {
-
-    }
+    xmlHttp.onreadystatechange = function() {
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+            var response = xmlHttp.responseText;
+            
+            var contentBox = document.getElementById("contentBox");
+            
+            contentBox.innerHTML = response;     
+        }
+    };
+    
+    document.getElementById('contentBox').innerHTML = "Andrew Kim did!";
+    
+    xmlHttp.open("GET", "responder.php", true);
+    
+    xmlHttp.send();     
 }
