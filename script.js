@@ -272,13 +272,15 @@ function changeInput() {
 
     if (newFunction == "password") {
         var newText = 
+        "<div class='center'>" +
         "<label for='username'>Username:</label>" +
         "<input type='text' name='username' id='username' placeholder='Username' required>" +
         "<label for='password'>Password:</label>" +
         "<input type='password' name='password' id='password' placeholder='Password' required>" +
         "<input type='hidden' name='actionType' value='password'>" +
         " " +
-        "<input type='submit'>";
+        "<input type='submit'>" +
+        "</div>";
 
         form.innerHTML = newText;
         form.setAttribute("method", "POST");
