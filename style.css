@@ -11,3 +11,8 @@ body {
 .header-elements {
     display: inline-block;
 }
+
+#buttons {
+    margin-left: auto;
+    margin-right: 0;
+}
