@@ -47,7 +47,7 @@
                     if ($username == "test" && $password == "pass") {
                         echo "<div class='d-flex'>";
                             echo "<h1 class='header-elements mr-auto'>You are now logged into Breakout!</h1>";
-                            echo "<div class='btn-group p-2' id='buttons' role='group' aria-label='Basic example'>";
+                            echo "<div class='btn-group p-2' id='buttons' role='group' aria-label='Buttons'>";
                                 echo "<button type='button' class='header-elements btn btn-primary btn-secondary' id='reload'>
                                     Try again?</button>";
                                 echo "<a href='index.html' class='btn btn-danger btn-secondary' id='logout'>Logout</a>";

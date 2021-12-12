@@ -16,3 +16,14 @@ body {
     margin-left: auto;
     margin-right: 0;
 }
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+#title {
+    text-align: center;
+}
