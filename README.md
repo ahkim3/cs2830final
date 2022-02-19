@@ -1,8 +1,7 @@
 # Arcade Toybox
 
-Multiplayer spin-off of the classic brick breaker game.
+Demonstration of web development skills learned in CS2830.
 
-## Controls
+## Instructions
 
-Red player controls their paddle with the A/D keys.
-Blue player controls their paddle with the left/right arrrow keys.
+To view the site, go to <https://ahkim3.github.io/cs2830final/>.
