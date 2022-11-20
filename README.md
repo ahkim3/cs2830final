@@ -6,4 +6,4 @@ This project was previously hosted in an Apache instance on Google Cloud, but wa
 
 ## Instructions
 
-To view the site, go to <https://ahkim3.github.io/cs2830final/>.
+To view the site, go to <https://toybox.andrewkim.tech/>.
